@@ -672,7 +672,7 @@ tx.feePayer = window.xnft?.solana.publicKey
     let accountWs: number;
     const awaitUpdatePromise = new Promise(
       (resolve: (value: UserState) => void) => {
-        accountWs = (new Connection(process.env.SOLANA_RPC_URL)).onAccountChange(
+        accountWs = (new Connection("https://rpc.helius.xyz/?api-key=6b1ccd35-ba2d-472a-8f54-9ac2c3c40b8b")).onAccountChange(
           this?.publicKey ?? PublicKey.default,
           async (accountInfo) => {
             const user = UserState.decode(accountInfo.data);

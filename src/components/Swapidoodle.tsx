@@ -4,7 +4,7 @@ import {
   Swap,
   usePublicKey,
   useTokenSwapFromId,
-} from "@strata-foundation/react";
+} from "strata-foundation-react-xnft/lib/cjs/src";
 
 import React from "react";
 

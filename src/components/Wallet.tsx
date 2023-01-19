@@ -3,14 +3,14 @@ import './bufferFill'
 import {
   ConnectionProvider,
   WalletProvider,
-} from "@solana/wallet-adapter-react";
+} from "wallet-adapter-react-xnft";
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import {
   PhantomWalletAdapter,
 } from "@solana/wallet-adapter-phantom";
 
 export const DEFAULT_ENDPOINT =
-  process.env.NEXT_PUBLIC_SOLANA_URL || "https://solana-mainnet.g.alchemy.com/v2/WM_Gl7ktiws7icLQVxLP5iVHNQTv8RNk";
+  "https://rpc.helius.xyz/?api-key=6b1ccd35-ba2d-472a-8f54-9ac2c3c40b8b" || "https://solana-mainnet.g.alchemy.com/v2/WM_Gl7ktiws7icLQVxLP5iVHNQTv8RNk";
 
   const network = 'mainnet-beta'
 

@@ -7,7 +7,7 @@ import {
   Notification,
   StrataProviders,
   ThemeProvider,
-} from "@strata-foundation/react";
+} from "strata-foundation-react-xnft/lib/cjs/src";
 import toast from "react-hot-toast";
 import { Wallet } from "./Wallet";
 
