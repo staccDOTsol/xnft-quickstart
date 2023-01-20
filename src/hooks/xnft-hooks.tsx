@@ -1,4 +1,4 @@
-import { Event, XnftMetadata } from "@coral-xyz/common-public";
+import { Event, XnftMetadata } from "@coral-xyz/common-public/dist/rn";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { useEffect, useState } from "react";
 

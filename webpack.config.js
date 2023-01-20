@@ -24,23 +24,35 @@ module.exports = async function (env, argv) {
 
 
   config.plugins = config.plugins.filter(
-    (plugin) => ["DefinePlugin", "CleanWebpackPlugin"].includes(plugin.constructor.name)
-  )
-
-  config.plugins.push(
+    (plugin) => ["DefinePlugin", "CleanWebpackPlugin"].includes(plugin.constructor.name))
+   config.plugins.push(
     new InlineJSPlugin({
       template: "template.html",
       filename: "index.html"
     })
   );
-
-
+config.module.rules.push({
+  include: "/Users/jarettdunn/sandstorm/node_modules/strata-foundation-react-xnft/src",
+test: /\.js$/,
+use: 'babel-loader'
+})
+config.module.rules.push({
+  include: "/Users/jarettdunn/sandstorm/node_modules/strata-foundation-react-xnft/src",
+test: /\.t(s|sx)$/,
+use: 'awesome-loader'
+})
+  config.module.rules.push({
+    test: /\.(m|j)s$/,
+    include: /src/,
+    exclude: /node_modules/,
+          use:'babel-loader'}
+  );
   // this is brittle but works for now.
   const loaders = config.module.rules.find(rule => typeof rule.oneOf !== "undefined");
   const urlLoader = loaders.oneOf.find((loader) => typeof loader.use === "object" && loader.use.loader && loader.use.loader.includes("url-loader"));
 
   urlLoader.use.options.limit = true;
-  urlLoader.test = /\.(gif|jpe?g|png|svg|css|woff2?|eot|ttf|otf)$/;
+  urlLoader.test = /\.(gif|jpe?g|png|svg|css|mjs|woff2?|eot|ttf|otf)$/;
 
   return config;
 
